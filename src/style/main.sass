@@ -1,0 +1,151 @@
+@import "../bower_libs/reset.css"
+@import "../bower_libs/normalize.css/normalize.css"
+@import "../bower_libs/bootstrap/dist/css/bootstrap-grid.min.css"
+
+// @import "partials/some"
+@import "partials/_fonts"
+@import "partials/_colors"
+@import "partials/_common"
+
+#header
+	position: relative
+	max-width: 1920px
+	width: 100%
+	max-height: 650px
+	height: 75vh
+	background: url("../img/header_bg.jpg") center center no-repeat
+	background-size: auto auto
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	text-align: center
+	
+	#persone
+		h1
+			padding: 15px 55px
+			font-size: 3em
+			border-top: 2px solid $active_color
+			border-bottom: 2px solid $active_color
+		h3
+			font-size: 1.125em
+			padding: 1em 0
+	#btn_menu_open
+		position: absolute
+		display: block
+		z-index: 99
+		span
+			font-family: Themify
+			font-size: 2.5em
+			// font-weight: 100
+	#main_menu
+		display: none
+		position: fixed
+		z-index: 100
+		height: 100%
+		width: 250px
+		background-color: $menu_bgc_1
+		left: 0
+		top: 0
+		overflow-y: auto
+		ul
+			display: flex
+			flex-direction: column
+			align-content: space-between
+			width: 100%
+			li
+				border-bottom: 1px solid $menu_deviders_1
+				&:last-of-type
+					border-bottom: none
+				a
+					display: block
+					width: 100%
+					padding-left: 1em
+					font-size: 1.25em
+					color: $white_text
+					text-align: left
+					line-height: 2.3em
+					transition: background-color 0.3s ease-in-out, text-shadow 0.3s ease-in-out
+					&:hover
+						background-color: $active_color
+						text-shadow: -2px 2px 3px rgba(0, 0, 0, .4)
+						transition: background-color 0.3s ease-in-out, text-shadow 0.3s ease-in-out
+		#avatar
+			background: url("../img/menu_avatar.jpg") center center no-repeat
+			background-size: 100% auto
+			width: 100%
+			height: 200px
+			position: relative
+			
+			span
+				font-family: Themify
+				font-size: 1.2em
+			h3, p
+				position: absolute
+				left: 20px
+				font-family: RalewayMedium
+				color: $white_text
+				text-shadow: -2px 2px 3px rgba(0, 0, 0, .4)
+			h3
+				font-size: 1.5em
+				bottom: 40px
+			p
+				font-size: 1em
+				bottom: 20px
+
+#about
+	#details
+		.plain_text
+			max-width: 455px
+		ul li
+			max-width: 350px
+			line-height: 40px
+			background-color: $main_bgc
+			border-bottom: 1px solid $dividers
+			&:last-of-type
+				border-bottom: none
+			& > *
+				display: inline-flex
+				font-size: 1.125em
+			span
+				font-family: RalewaySemiBold
+			p
+				padding-left: 5px
+	#photo
+		text-align: right
+		img
+			max-width: 420px
+			width: 100%
+			max-height: 526px
+			border: 1px solid white
+			box-shadow: 3px 3px 6px rgba(0,0,0,0.5) 
+		
+	
+
+
+
+// media
+@media screen and (max-width: 992px)
+	#details
+		ul
+			padding-bottom: 40px
+			li
+				margin-right: 0
+				margin: 0 auto
+	#photo
+		display: flex
+		flex-direction: row
+		justify-content: center
+
+@media screen and (max-width: 576px)
+	#main_menu
+		width: 200px
+		ul
+			li
+				a
+					font-size: 1.2em
+					line-height: 2.2em
+		#avatar
+			background: url("../img/menu_avatar.jpg") center 10% no-repeat
+			background-size: 100% auto
+			height: 170px
